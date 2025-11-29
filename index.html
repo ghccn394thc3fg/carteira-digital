@@ -13,16 +13,27 @@
         background-color: #fff;
     }
 
-    /* Estilo do Container Cinza (bg-light do bootstrap ajustado) */
+    /* --- ESTILOS DA LOGO E TOPO --- */
+    .logo-wrapper {
+        text-align: center;
+        padding-top: 60px; /* Desktop: 60px */
+        margin-bottom: 30px; /* Espaço entre a logo e o primeiro formulário */
+    }
+
+    .custom-logo {
+        width: 284px; /* Desktop: 284px */
+        height: auto;
+    }
+
+    /* --- ESTILOS DOS CARDS E FORMULÁRIO --- */
     .custom-card {
-        background-color: #f8f9fa; /* Cinza bem claro igual ao print */
+        background-color: #f8f9fa;
         padding: 15px;
         margin-bottom: 15px;
         border-radius: 4px;
         width: 100%;
     }
 
-    /* Estilização do Input estilo Material Design (Apenas linha embaixo) */
     .custom-material-group {
         position: relative;
         margin-bottom: 15px;
@@ -32,60 +43,81 @@
     .custom-material-group label {
         display: block;
         font-size: 12px;
-        color: #888; /* Cinza para o label */
+        color: #888;
         margin-bottom: 2px;
-        transform: scale(0.9); /* Leve ajuste pra ficar delicado */
+        transform: scale(0.9);
         transform-origin: left top;
     }
 
     .custom-material-group input {
         width: 100%;
         border: none;
-        border-bottom: 1px solid #ccc; /* Linha cinza */
+        border-bottom: 1px solid #ccc;
         background: transparent;
-        color: #00457c; /* O AZUL SOLICITADO */
+        color: #00457c;
         font-size: 16px;
-        font-weight: 400; /* Levemente negrito */
+        font-weight: 400;
         padding: 5px 0;
         border-radius: 0;
         outline: none;
-        text-transform: uppercase; /* Para forçar caixa alta como no print */
+        text-transform: uppercase;
     }
 
-    /* Remove o focus padrão azul do navegador e mantem o estilo */
     .custom-material-group input:focus {
         outline: none;
         border-bottom: 1px solid #00457c;
     }
 
-    /* Ajuste específico para o código de validação (topo) */
     .validation-code-input {
-        font-size: 18px !important; /* Um pouco maior */
+        font-size: 18px !important;
         letter-spacing: 1px;
         color: #1c1c1c !important;
     }
 
-    /* --- NOVAS REGRAS DE LARGURA --- */
-    /* Removemos a dependência total do col-md-8 para ter controle exato dos pixels */
+    /* --- REGRAS DE LARGURA DO CONTAINER DE BAIXO --- */
     .container-ajustado {
-        width: 740px; /* Largura padrão solicitada */
-        max-width: 100%; /* Garante que não quebre em telas menores que 740px */
+        width: 740px;
+        max-width: 100%;
     }
 
+    /* --- MEDIA QUERIES (TABLET E MOBILE) --- */
+    
+    /* Tablet e Telas Médias (Até 1024px) */
     @media (max-width: 1024px) {
         .container-ajustado {
-            width: 619px; /* Largura solicitada para tablet/laptop menor */
+            width: 619px; /* Ajuste do container para tablet */
+        }
+        
+        .custom-logo {
+            width: 223px; /* Logo reduzida no tablet */
+        }
+    }
+
+    /* Mobile (Até 767px - Celulares padrão) */
+    @media (max-width: 767px) {
+        .logo-wrapper {
+            padding-top: 20px; /* Padding reduz para 20px no mobile */
+        }
+
+        .custom-logo {
+            width: 284px; /* Logo volta para o tamanho maior no mobile */
         }
     }
 </style>
 </head>
 <body>
 
-<div class="container mt-4">
+<div class="container">
     
+    <!-- LOGO NO TOPO -->
+    <div class="row">
+        <div class="col-12 logo-wrapper">
+            <img src="https://novoportal.cruzeirodosul.edu.br/static/logos/educacional/flat/cruzeiro-edu.png" alt="Logo Cruzeiro do Sul" class="custom-logo">
+        </div>
+    </div>
+
     <!-- BLOCO DE CIMA: CÓDIGO -->
     <div class="row">
-        <!-- Mantive o de cima com col-md-6 padrão do bootstrap, mas centralizado -->
         <div class="col-12 col-md-6 mx-auto">
             <div class="custom-card">
                 <div class="custom-material-group">
@@ -96,9 +128,8 @@
         </div>
     </div>
 
-    <!-- BLOCO DE BAIXO: DADOS (COM LARGURA PERSONALIZADA) -->
+    <!-- BLOCO DE BAIXO: DADOS -->
     <div class="row">
-        <!-- Apliquei a classe container-ajustado e mx-auto para centralizar -->
         <div class="col-12 mx-auto container-ajustado">
             <div class="custom-card">
                 
